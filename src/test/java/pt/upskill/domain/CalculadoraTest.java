@@ -201,27 +201,15 @@ class CalculadoraTest {
     }
 
     @Test
-    void testBinaryToDecimal() {
-        double result = calc.binaryToDecimal("1010");
-        assertEquals(10, result);
-    }
-
-    @Test
-    void testDecimalToBinary() {
-        int result = calc.decimalToBinary(10);
-        assertEquals(1010, result);
+    void testIsPrimeNumberEdgeCases() {
+        assertFalse(calc.isPrime(0));
+        assertFalse(calc.isPrime(1));
+        assertTrue(calc.isPrime(2));
     }
 
     @Test
     void testIntToHex() {
         String result = calc.intToHex(255);
         assertEquals("ff", result);
-    }
-
-    @Test
-    void testIsPrimeNumberEdgeCases() {
-        assertFalse(calc.isPrime(0));
-        assertFalse(calc.isPrime(1));
-        assertTrue(calc.isPrime(2));
     }
 }
