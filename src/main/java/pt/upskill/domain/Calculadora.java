@@ -71,5 +71,19 @@ public class Calculadora {
         }
         return factorial;
     }
+    public boolean isComposedByCubes(int num) {
+        int sum = 0;
+        int originalNum = num;
+        while (num > 0) {
+            int digit = num % 10;
+            sum += Math.pow(digit, 3);
+            num /= 10;
+        }
+        return sum == originalNum;
+    }
+
+    public String decimalToBinary(int decimal) {
+        return Integer.toBinaryString(decimal);
+    }
 
 }
