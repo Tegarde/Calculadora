@@ -49,7 +49,7 @@ public class Calculadora {
         this.result = result;
     }
 
-    public void erase(double result) {
+    public void erase() {
         this.result = 0;
     }
 
@@ -86,8 +86,9 @@ public class Calculadora {
         return Integer.parseInt(binaryString, 2);
     }
 
-    public String decimalToBinary(int decimal) {
-        return Integer.toBinaryString(decimal);
+    public int decimalToBinary(int decimal) {
+        String binary = Integer.toBinaryString(decimal);
+        return Integer.parseInt(binary);
     }
 
 
