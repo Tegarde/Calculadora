@@ -100,4 +100,16 @@ class CalculadoraTest {
         result = calc.isComposedByCubes(123);
         assertFalse(result);
     }
+
+    @Test
+    void testIsPrimeNumberTrue() {
+        boolean result = calc.isPrime(7);
+        assertTrue(result);
+    }
+
+    @Test
+    void testIsPrimeNumberFalse() {
+        boolean result = calc.isPrime(6);
+        assertFalse(result);
+    }
 }
