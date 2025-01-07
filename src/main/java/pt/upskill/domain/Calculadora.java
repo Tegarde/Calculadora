@@ -77,10 +77,10 @@ public class Calculadora {
         return sum == originalNum;
     }
 
-    public String decimalToBinary(int decimal) {
-        return Integer.toBinaryString(decimal);
+    public int decimalToBinary(int decimal) {
+        String binary = Integer.toBinaryString(decimal);
+        return Integer.parseInt(binary);
     }
-
 
     public String intToHex(double num) {
         return Integer.toHexString((int) num);
