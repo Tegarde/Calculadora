@@ -59,4 +59,12 @@ class CalculadoraTest {
     @Test
     void testPower() {
     }
+
+    @Test
+    void testIsComposedByCubes() {
+        boolean result = calc.isComposedByCubes(153);
+        assertTrue(result);
+        result = calc.isComposedByCubes(123);
+        assertFalse(result);
+    }
 }
