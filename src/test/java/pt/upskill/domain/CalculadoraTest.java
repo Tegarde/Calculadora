@@ -84,10 +84,35 @@ class CalculadoraTest {
 
     @Test
     void power() {
+        calc.save(2);
+        double result = calc.power(3);
+        assertEquals(8.0, result, 0.01);
     }
 
     @Test
     void testPower() {
+        double result = calc.power(2, 3);
+        assertEquals(8.0, result, 0.01);
+    }
+
+    @Test
+    void calculateFactorial() {
+        int result = calc.calculateFactorial(5);
+        assertEquals(120, result);
+    }
+
+    @Test
+    void calculateFactorialZero() {
+        int result = calc.calculateFactorial(0);
+        assertEquals(1, result);
+    }
+
+    @Test
+    void calculateFactorialNegative() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            calc.calculateFactorial(-1);
+        });
+        assertEquals("Number must be non-negative.", exception.getMessage());
     }
 
     @Test
