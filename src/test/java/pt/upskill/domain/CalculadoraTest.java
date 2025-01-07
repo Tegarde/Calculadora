@@ -88,14 +88,14 @@ class CalculadoraTest {
     }
 
     @Test
-    void power() {
+    void powerWithTwoNumbers() {
         calc.save(2);
         double result = calc.power(3);
         assertEquals(8.0, result, 0.01);
     }
 
     @Test
-    void testPower() {
+    void powerWithStoreResult() {
         double result = calc.power(2, 3);
         assertEquals(8.0, result, 0.01);
     }
