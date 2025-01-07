@@ -30,10 +30,15 @@ class CalculadoraTest {
 
     @Test
     void calculateProduct() {
+        double result = calc.calculateProduct(2, 5);
+        assertEquals(10, result);
     }
 
     @Test
-    void testCalculateProduct() {
+    void calculateProductWithStoreResult() {
+        calc.save(10);
+        double result = calc.calculateProduct(2.5);
+        assertEquals(25.0, result, 0.01);
     }
 
     @Test
