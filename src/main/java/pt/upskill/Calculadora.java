@@ -1,4 +1,4 @@
-package pt.upskill.domain;
+package pt.upskill;
 
 public class Calculadora {
     private double result;
@@ -18,13 +18,8 @@ public class Calculadora {
     public double subtraction(double num1, int num2) {
         return num1 - num2;
     }
-
     public double subtraction(double num1) {
         return result - num1;
-    }
-
-    public double calculateProduct(double num1) {
-        return num1 * result;
     }
 
     public double calculateProduct(double num1, double num2) {
@@ -61,15 +56,15 @@ public class Calculadora {
         return Math.pow(result, x);
     }
 
-    public int calculateFactorial(int number) {
-        if (number < 0) {
-            throw new IllegalArgumentException("Number must be non-negative.");
+    public boolean isComposedByCubes(int num) {
+        int sum = 0;
+        int originalNum = num;
+        while (num > 0) {
+            int digit = num % 10;
+            sum += Math.pow(digit, 3);
+            num /= 10;
         }
-        int factorial = 1;
-        for (int i = 1; i <= number; i++) {
-            factorial *= i;
-        }
-        return factorial;
+        return sum == originalNum;
     }
-
+    
 }
