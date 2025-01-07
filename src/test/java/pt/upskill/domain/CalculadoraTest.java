@@ -174,4 +174,10 @@ class CalculadoraTest {
         boolean result = calc.isPrime(6);
         assertFalse(result);
     }
+
+    @Test
+    void isPrimeNumberLessOrEqualThanOne() {
+        boolean result = calc.isPrime(1);
+        assertFalse(result);
+    }
 }
