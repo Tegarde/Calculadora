@@ -94,6 +94,25 @@ class CalculadoraTest {
     }
 
     @Test
+    void powerWithZeroExponent() {
+        double result = calc.power(2, 0);
+        assertEquals(1.0, result, 0.01);
+    }
+
+    @Test
+    void powerWithNegativeExponent() {
+        double result = calc.power(2, -3);
+        assertEquals(0.125, result, 0.01);
+    }
+
+    @Test
+    void powerWithZeroBase() {
+        double result = calc.power(0, 3);
+        assertEquals(0.0, result, 0.01);
+    }
+
+
+    @Test
     void calculateFactorial() {
         int result = calc.calculateFactorial(5);
         assertEquals(120, result);
@@ -111,6 +130,12 @@ class CalculadoraTest {
             calc.calculateFactorial(-1);
         });
         assertEquals("Number must be non-negative.", exception.getMessage());
+    }
+
+    @Test
+    void calculateFactorialLargeNumber() {
+        int result = calc.calculateFactorial(10);
+        assertEquals(3628800, result);
     }
 
     @Test
