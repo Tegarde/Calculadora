@@ -49,7 +49,7 @@ public class Calculadora {
         this.result = result;
     }
 
-    public void erase(double result) {
+    public void erase() {
         this.result = 0;
     }
 
@@ -82,6 +82,10 @@ public class Calculadora {
         return sum == originalNum;
     }
 
+    public double binaryToDecimal(String binaryString){
+        return Integer.parseInt(binaryString, 2);
+    }
+
     public int decimalToBinary(int decimal) {
         String binary = Integer.toBinaryString(decimal);
         return Integer.parseInt(binary);
@@ -90,6 +94,7 @@ public class Calculadora {
     public String intToHex(double num) {
         return Integer.toHexString((int) num);
     }
+
     public boolean isPrime(int num1) {
         if (num1 <= 1) {
             return false;
