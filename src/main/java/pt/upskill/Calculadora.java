@@ -17,4 +17,8 @@ public class Calculadora {
     public void save(double result){
         this.result = result;
     }
+
+    public double power(double x, double y) {
+        return Math.pow(x, y);
+    }
 }
