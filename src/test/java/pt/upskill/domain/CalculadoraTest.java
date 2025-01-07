@@ -175,6 +175,16 @@ class CalculadoraTest {
     }
 
     @Test
+    void testIsPrimeNumberLargePrime() {
+        assertTrue(calc.isPrime(7919));
+    }
+
+    @Test
+    void testIsPrimeNumberLargeNonPrime() {
+        assertFalse(calc.isPrime(8000));
+    }
+
+    @Test
     void testBinaryToDecimal() {
         double result = calc.binaryToDecimal("1010");
         assertEquals(10, result);
@@ -197,15 +207,5 @@ class CalculadoraTest {
         assertFalse(calc.isPrime(0));
         assertFalse(calc.isPrime(1));
         assertTrue(calc.isPrime(2));
-    }
-
-    @Test
-    void testIsPrimeNumberLargePrime() {
-        assertTrue(calc.isPrime(7919));
-    }
-
-    @Test
-    void testIsPrimeNumberLargeNonPrime() {
-        assertFalse(calc.isPrime(8000));
     }
 }
