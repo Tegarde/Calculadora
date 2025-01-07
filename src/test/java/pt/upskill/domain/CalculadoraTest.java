@@ -58,11 +58,23 @@ class CalculadoraTest {
     }
 
     @Test
-    void division() {
+    void divisionTwoNumbers() {
+        double result = calc.division(10, 3);
+        double expected = 3.33;
+        assertEquals(expected, result, 0.01);
     }
 
     @Test
-    void testDivision() {
+    void divisionByZero_ShouldThrowException() {
+        assertThrows(IllegalArgumentException.class, () -> calc.division(10, 0));
+    }
+
+    @Test
+    void divisionWithStoreResult() {
+        calc.save(10);
+        double result = calc.division(3);
+        double expected = 3.33;
+        assertEquals(expected, result, 0.01);
     }
 
     @Test
@@ -79,5 +91,13 @@ class CalculadoraTest {
 
     @Test
     void testPower() {
+    }
+
+    @Test
+    void testIsComposedByCubes() {
+        boolean result = calc.isComposedByCubes(153);
+        assertTrue(result);
+        result = calc.isComposedByCubes(123);
+        assertFalse(result);
     }
 }
