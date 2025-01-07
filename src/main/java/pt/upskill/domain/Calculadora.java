@@ -1,4 +1,4 @@
-package pt.upskill;
+package pt.upskill.domain;
 
 public class Calculadora {
     private double result;
