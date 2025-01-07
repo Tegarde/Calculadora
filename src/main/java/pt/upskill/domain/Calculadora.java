@@ -18,8 +18,13 @@ public class Calculadora {
     public double subtraction(double num1, int num2) {
         return num1 - num2;
     }
+
     public double subtraction(double num1) {
         return result - num1;
+    }
+
+    public double calculateProduct(double num1) {
+        return num1 * result;
     }
 
     public double calculateProduct(double num1, double num2) {
@@ -85,4 +90,19 @@ public class Calculadora {
     public String intToHex(double num) {
         return Integer.toHexString((int) num);
     }
+    public boolean isPrime(int num1) {
+        if (num1 <= 1) {
+            return false;
+        }
+
+        for (int i = 2; i < num1; i++)
+        {
+            if((num1% i) == 0)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
