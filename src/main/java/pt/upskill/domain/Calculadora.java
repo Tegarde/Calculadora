@@ -18,6 +18,7 @@ public class Calculadora {
     public double subtraction(double num1, int num2) {
         return num1 - num2;
     }
+
     public double subtraction(double num1) {
         return result - num1;
     }
@@ -59,4 +60,16 @@ public class Calculadora {
     public double power(double x) {
         return Math.pow(result, x);
     }
+
+    public int calculateFactorial(int number) {
+        if (number < 0) {
+            throw new IllegalArgumentException("Number must be non-negative.");
+        }
+        int factorial = 1;
+        for (int i = 1; i <= number; i++) {
+            factorial *= i;
+        }
+        return factorial;
+    }
+
 }
