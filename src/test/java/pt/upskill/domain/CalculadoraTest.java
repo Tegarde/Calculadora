@@ -95,4 +95,20 @@ class CalculadoraTest {
         result = calc.isComposedByCubes(123);
         assertFalse(result);
     }
+
+    @Test
+    void testBinaryToDecimal(){
+        double result=10;
+        assertEquals(result,calc.binaryToDecimal("1010"));
+        result=255;
+        assertEquals(result,calc.binaryToDecimal("11111111"));
+
+    }
+
+    @Test
+    void testInvalidBinary() {
+        assertThrows(IllegalArgumentException.class, () -> calc.binaryToDecimal("2"));
+        assertThrows(IllegalArgumentException.class, () -> calc.binaryToDecimal("10201"));
+        assertThrows(IllegalArgumentException.class, () -> calc.binaryToDecimal(""));
+}
 }
