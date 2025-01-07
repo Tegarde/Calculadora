@@ -73,11 +73,13 @@ class CalculadoraTest {
     }
 
     @Test
-    void save() {
-    }
+    void eraseSavedResult() {
+        calc.save(10); // save result
+        calc.erase(); // erase saved result
 
-    @Test
-    void erase() {
+        double result = calc.sum(5);
+        double expected = 5;
+        assertEquals(expected, result);
     }
 
     @Test

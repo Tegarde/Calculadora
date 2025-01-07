@@ -49,7 +49,7 @@ public class Calculadora {
         this.result = result;
     }
 
-    public void erase(double result) {
+    public void erase() {
         this.result = 0;
     }
 
