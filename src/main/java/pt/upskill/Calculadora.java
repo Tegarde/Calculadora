@@ -16,6 +16,10 @@ public class Calculadora {
         return result - num1;
     }
 
+    public double calculateProduct(double num1) {
+        return num1 * result;
+    }
+
     public double calculateProduct(double num1, double num2) {
         return num1 * num2;
     }
