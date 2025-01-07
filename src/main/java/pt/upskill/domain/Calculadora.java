@@ -82,6 +82,10 @@ public class Calculadora {
         return sum == originalNum;
     }
 
+    public double binaryToDecimal(String binaryString){
+        return Integer.parseInt(binaryString, 2);
+    }
+
     public String decimalToBinary(int decimal) {
         return Integer.toBinaryString(decimal);
     }
