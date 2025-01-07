@@ -55,4 +55,8 @@ public class Calculadora {
     public double power(double x) {
         return Math.pow(result, x);
     }
+
+    public String intToHex(double num) {
+        return Integer.toHexString((int) num);
+    }
 }
