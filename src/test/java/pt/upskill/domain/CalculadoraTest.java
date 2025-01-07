@@ -153,6 +153,16 @@ class CalculadoraTest {
     }
 
     @Test
+    void testDecimalToBinary() {
+        int result = calc.decimalToBinary(15);
+        assertEquals(1111, result);
+        result = calc.decimalToBinary(300);
+        assertEquals(100101100, result);
+        result = calc.decimalToBinary(66);
+        assertEquals(1000010, result);
+    }
+
+    @Test
     void testIsPrimeNumberTrue() {
         boolean result = calc.isPrime(7);
         assertTrue(result);

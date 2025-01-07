@@ -76,7 +76,7 @@ public class Calculadora {
         int originalNum = num;
         while (num > 0) {
             int digit = num % 10;
-            sum += Math.pow(digit, 3);
+            sum += (int) Math.pow(digit, 3);
             num /= 10;
         }
         return sum == originalNum;
@@ -91,23 +91,20 @@ public class Calculadora {
         return Integer.parseInt(binary);
     }
 
-
     public String intToHex(double num) {
         return Integer.toHexString((int) num);
     }
+
     public boolean isPrime(int num1) {
         if (num1 <= 1) {
             return false;
         }
 
-        for (int i = 2; i < num1; i++)
-        {
-            if((num1% i) == 0)
-            {
+        for (int i = 2; i < num1; i++) {
+            if (num1 % i == 0) {
                 return false;
             }
         }
         return true;
     }
-
 }
