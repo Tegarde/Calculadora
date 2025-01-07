@@ -46,10 +46,15 @@ class CalculadoraTest {
 
     @Test
     void calculateProduct() {
+        double result = calc.calculateProduct(2, 5);
+        assertEquals(10, result);
     }
 
     @Test
-    void testCalculateProduct() {
+    void calculateProductWithStoreResult() {
+        calc.save(10);
+        double result = calc.calculateProduct(2.5);
+        assertEquals(25.0, result, 0.01);
     }
 
     @Test
@@ -145,6 +150,18 @@ class CalculadoraTest {
         boolean result = calc.isComposedByCubes(153);
         assertTrue(result);
         result = calc.isComposedByCubes(123);
+        assertFalse(result);
+    }
+
+    @Test
+    void testIsPrimeNumberTrue() {
+        boolean result = calc.isPrime(7);
+        assertTrue(result);
+    }
+
+    @Test
+    void testIsPrimeNumberFalse() {
+        boolean result = calc.isPrime(6);
         assertFalse(result);
     }
 }

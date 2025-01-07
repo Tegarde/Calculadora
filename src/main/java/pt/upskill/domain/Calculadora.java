@@ -91,6 +91,10 @@ public class Calculadora {
         return Integer.parseInt(binary);
     }
 
+
+    public String intToHex(double num) {
+        return Integer.toHexString((int) num);
+    }
     public boolean isPrime(int num1) {
         if (num1 <= 1) {
             return false;
