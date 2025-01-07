@@ -78,16 +78,6 @@ class CalculadoraTest {
     }
 
     @Test
-    void eraseSavedResult() {
-        calc.save(10); // save result
-        calc.erase(); // erase saved result
-
-        double result = calc.sum(5);
-        double expected = 5;
-        assertEquals(expected, result);
-    }
-
-    @Test
     void powerWithTwoNumbers() {
         calc.save(2);
         double result = calc.power(3);
@@ -98,6 +88,16 @@ class CalculadoraTest {
     void powerWithStoreResult() {
         double result = calc.power(2, 3);
         assertEquals(8.0, result, 0.01);
+    }
+
+    @Test
+    void eraseSavedResult() {
+        calc.save(10); // save result
+        calc.erase(); // erase saved result
+
+        double result = calc.sum(5);
+        double expected = 5;
+        assertEquals(expected, result);
     }
 
     @Test
