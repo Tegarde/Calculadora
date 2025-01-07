@@ -1,17 +1,23 @@
-package pt.upskill;
+package pt.upskill.domain;
 
 public class Calculadora {
-
     private double result;
 
     public Calculadora() {
         result = 0;
     }
 
+    public double sum(double num1, int num2) {
+        return num1 + num2;
+    }
+
+    public double sum(double num1) {
+        return result + num1;
+    }
+
     public double subtraction(double num1, int num2) {
         return num1 - num2;
     }
-
     public double subtraction(double num1) {
         return result - num1;
     }
@@ -40,6 +46,10 @@ public class Calculadora {
 
     public void save(double result) {
         this.result = result;
+    }
+
+    public void erase(double result) {
+        this.result = 0;
     }
 
     public double power(double x, double y) {
