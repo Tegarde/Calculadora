@@ -78,19 +78,6 @@ class CalculadoraTest {
     }
 
     @Test
-    void powerWithTwoNumbers() {
-        calc.save(2);
-        double result = calc.power(3);
-        assertEquals(8.0, result, 0.01);
-    }
-
-    @Test
-    void powerWithStoreResult() {
-        double result = calc.power(2, 3);
-        assertEquals(8.0, result, 0.01);
-    }
-
-    @Test
     void eraseSavedResult() {
         calc.save(10); // save result
         calc.erase(); // erase saved result
@@ -99,6 +86,38 @@ class CalculadoraTest {
         double expected = 5;
         assertEquals(expected, result);
     }
+
+    @Test
+    void power() {
+        calc.save(2);
+        double result = calc.power(3);
+        assertEquals(8.0, result, 0.01);
+    }
+
+    @Test
+    void testPower() {
+        double result = calc.power(2, 3);
+        assertEquals(8.0, result, 0.01);
+    }
+
+    @Test
+    void powerWithZeroExponent() {
+        double result = calc.power(2, 0);
+        assertEquals(1.0, result, 0.01);
+    }
+
+    @Test
+    void powerWithNegativeExponent() {
+        double result = calc.power(2, -3);
+        assertEquals(0.125, result, 0.01);
+    }
+
+    @Test
+    void powerWithZeroBase() {
+        double result = calc.power(0, 3);
+        assertEquals(0.0, result, 0.01);
+    }
+
 
     @Test
     void calculateFactorial() {
@@ -121,10 +140,28 @@ class CalculadoraTest {
     }
 
     @Test
+    void calculateFactorialLargeNumber() {
+        int result = calc.calculateFactorial(10);
+        assertEquals(3628800, result);
+    }
+
+    @Test
     void testIsComposedByCubes() {
         boolean result = calc.isComposedByCubes(153);
         assertTrue(result);
         result = calc.isComposedByCubes(123);
+        assertFalse(result);
+    }
+
+    @Test
+    void testIsPrimeNumberTrue() {
+        boolean result = calc.isPrime(7);
+        assertTrue(result);
+    }
+
+    @Test
+    void testIsPrimeNumberFalse() {
+        boolean result = calc.isPrime(6);
         assertFalse(result);
     }
 }
