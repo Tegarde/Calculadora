@@ -56,6 +56,32 @@ public class Calculadora {
         return Math.pow(result, x);
     }
 
+    public int calculateFactorial(int number) {
+        if (number < 0) {
+            throw new IllegalArgumentException("Number must be non-negative.");
+        }
+        int factorial = 1;
+        for (int i = 1; i <= number; i++) {
+            factorial *= i;
+        }
+        return factorial;
+    }
+    public boolean isComposedByCubes(int num) {
+        int sum = 0;
+        int originalNum = num;
+        while (num > 0) {
+            int digit = num % 10;
+            sum += Math.pow(digit, 3);
+            num /= 10;
+        }
+        return sum == originalNum;
+    }
+
+    public String decimalToBinary(int decimal) {
+        return Integer.toBinaryString(decimal);
+    }
+
+
     public String intToHex(double num) {
         return Integer.toHexString((int) num);
     }
