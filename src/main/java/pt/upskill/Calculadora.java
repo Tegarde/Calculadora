@@ -13,4 +13,8 @@ public class Calculadora {
     public double subtraction(double num1) {
         return result - num1;
     }
+
+    public void save(double result){
+        this.result = result;
+    }
 }
