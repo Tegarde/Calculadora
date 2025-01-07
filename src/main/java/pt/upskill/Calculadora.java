@@ -17,4 +17,8 @@ public class Calculadora {
     public void save(double result){
         this.result = result;
     }
+
+    public void erase(double result) {
+        this.result = 0;
+    }
 }
