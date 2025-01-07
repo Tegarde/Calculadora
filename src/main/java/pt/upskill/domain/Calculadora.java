@@ -86,8 +86,9 @@ public class Calculadora {
         return Integer.parseInt(binaryString, 2);
     }
 
-    public String decimalToBinary(int decimal) {
-        return Integer.toBinaryString(decimal);
+    public int decimalToBinary(int decimal) {
+        String binary = Integer.toBinaryString(decimal);
+        return Integer.parseInt(binary);
     }
 
     public boolean isPrime(int num1) {
