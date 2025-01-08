@@ -107,7 +107,6 @@ import java.util.Scanner;
                         System.out.println("Invalid option. Please try again.");
                 }
                 System.out.println();
-
             }
 
             scanner.close();
@@ -136,7 +135,7 @@ import java.util.Scanner;
             System.out.println("3. Product");
             System.out.println("4. Division");
             System.out.println("5. Power");
-            System.out.println("6. Erase Result and Exit");
+            System.out.println("6. Erase Result and Restart");
             System.out.print("\nChoose an option: ");
             Scanner scanner = new Scanner(System.in);
             int choice = scanner.nextInt();
@@ -149,9 +148,31 @@ import java.util.Scanner;
                     break;
                 case 2:
                     System.out.println("Enter number: ");
-                    double num2 = scanner.nextDouble();
-                    calculadora.save(calculadora.subtraction(num2));
+                    num1 = scanner.nextDouble();
+                    calculadora.save(calculadora.subtraction(num1));
                     System.out.printf("Result: %.2f\n", calculadora.getResult());
+                    break;
+                case 3:
+                    System.out.println("Enter number: ");
+                    num1 = scanner.nextDouble();
+                    calculadora.save(calculadora.calculateProduct(num1));
+                    System.out.printf("Result: %.2f\n", calculadora.getResult());
+                    break;
+                case 4:
+                    System.out.println("Enter number: ");
+                    num1 = scanner.nextDouble();
+                    calculadora.save(calculadora.division(num1));
+                    System.out.printf("Result: %.2f\n", calculadora.getResult());
+                    break;
+                case 5:
+                    System.out.println("Enter number: ");
+                    num1 = scanner.nextDouble();
+                    calculadora.save(calculadora.power(num1));
+                    System.out.printf("Result: %.2f\n", calculadora.getResult());
+                    break;
+                case 6:
+                    calculadora.erase();
+                    System.out.println("Result erased.");
                     break;
             }
         }
