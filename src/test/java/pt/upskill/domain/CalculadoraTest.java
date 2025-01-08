@@ -15,6 +15,12 @@ class CalculadoraTest {
     }
 
     @Test
+    void testSumWithNegativeNumbers() {
+        double result = calc.sum(-5, -3);
+        assertEquals(-8, result);
+    }
+
+    @Test
     void sumWithStoreResult() {
         calc.save(10);
         double result = calc.sum(5.0);
@@ -27,6 +33,12 @@ class CalculadoraTest {
         double result = calc.subtraction(5, 3);
         double expected = 2;
         assertEquals(expected, result);
+    }
+
+    @Test
+    void testSubtractionWithNegativeNumbers() {
+        double result = calc.subtraction(-5, -3);
+        assertEquals(-2, result);
     }
 
     @Test
@@ -51,6 +63,13 @@ class CalculadoraTest {
     }
 
     @Test
+    void testCalculateProductWithZero() {
+        calc.save(0);
+        double result = calc.calculateProduct(5);
+        assertEquals(0, result);
+    }
+
+    @Test
     void calculateProductWithStoreResult() {
         calc.save(10);
         double result = calc.calculateProduct(2.5);
@@ -62,6 +81,18 @@ class CalculadoraTest {
         double result = calc.division(10, 3);
         double expected = 3.33;
         assertEquals(expected, result, 0.01);
+    }
+
+    @Test
+    void testDivisionWithNegativeNumbers() {
+        double result = calc.division(-10, -2);
+        assertEquals(5, result);
+    }
+
+    @Test
+    void testDivisionWithStoreResultZero() {
+        calc.save(0);
+        assertThrows(IllegalArgumentException.class, () -> calc.division(0));
     }
 
     @Test
@@ -123,7 +154,6 @@ class CalculadoraTest {
         assertEquals(0.0, result, 0.01);
     }
 
-
     @Test
     void calculateFactorial() {
         int result = calc.calculateFactorial(5);
@@ -159,12 +189,17 @@ class CalculadoraTest {
     }
 
     @Test
-    void testBinaryToDecimal(){
-        double result=10;
-        assertEquals(result,calc.binaryToDecimal("1010"));
-        result=255;
-        assertEquals(result,calc.binaryToDecimal("11111111"));
+    void testBinaryToDecimal() {
+        double result = 10;
+        assertEquals(result, calc.binaryToDecimal("1010"));
+        result = 255;
+        assertEquals(result, calc.binaryToDecimal("11111111"));
 
+    }
+
+    @Test
+    void testBinaryToDecimalWithInvalidInput() {
+        assertThrows(NumberFormatException.class, () -> calc.binaryToDecimal("2"));
     }
 
     @Test
@@ -172,7 +207,7 @@ class CalculadoraTest {
         assertThrows(IllegalArgumentException.class, () -> calc.binaryToDecimal("2"));
         assertThrows(IllegalArgumentException.class, () -> calc.binaryToDecimal("10201"));
         assertThrows(IllegalArgumentException.class, () -> calc.binaryToDecimal(""));
-}
+    }
 
     @Test
     void testDecimalToBinary() {
@@ -185,6 +220,12 @@ class CalculadoraTest {
     }
 
     @Test
+    void testDecimalToBinaryWithZero() {
+        int result = calc.decimalToBinary(0);
+        assertEquals(0, result);
+    }
+
+    @Test
     void testIsPrimeNumberTrue() {
         boolean result = calc.isPrime(7);
         assertTrue(result);
@@ -194,6 +235,11 @@ class CalculadoraTest {
     void testIsPrimeNumberFalse() {
         boolean result = calc.isPrime(6);
         assertFalse(result);
+    }
+
+    @Test
+    void testIsPrimeWithNegativeNumber() {
+        assertFalse(calc.isPrime(-5));
     }
 
     @Test
@@ -217,5 +263,11 @@ class CalculadoraTest {
     void testIntToHex() {
         String result = calc.intToHex(255);
         assertEquals("ff", result);
+    }
+
+    @Test
+    void testIntToHexWithZero() {
+        String result = calc.intToHex(0);
+        assertEquals("0", result);
     }
 }
