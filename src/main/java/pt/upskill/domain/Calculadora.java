@@ -7,7 +7,7 @@ public class Calculadora {
         result = 0;
     }
 
-    public double sum(double num1, int num2) {
+    public double sum(double num1, double num2) {
         return num1 + num2;
     }
 
@@ -15,7 +15,7 @@ public class Calculadora {
         return result + num1;
     }
 
-    public double subtraction(double num1, int num2) {
+    public double subtraction(double num1, double num2) {
         return num1 - num2;
     }
 
