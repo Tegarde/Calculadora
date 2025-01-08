@@ -21,9 +21,8 @@ import java.util.Scanner;
                 System.out.println("9. Convert Decimal to Binary");
                 System.out.println("10. Convert Integer to Hex");
                 System.out.println("11. Check if Number is Prime");
-                System.out.println("12. Save Result");
-                System.out.println("13. Erase Result");
-                System.out.println("14. Exit");
+                System.out.println("12. Erase Result");
+                System.out.println("13. Exit");
                 System.out.print("Choose an option: ");
                 int choice = scanner.nextInt();
 
@@ -33,21 +32,24 @@ import java.util.Scanner;
                         double num1 = scanner.nextDouble();
                         System.out.print("Enter second number: ");
                         double num2 = scanner.nextDouble();
-                        System.out.println("Result: " + calculadora.sum(num1, num2));
+                        calculadora.save(calculadora.sum(num1, num2));
+                        System.out.printf("Result: %.2f\n", calculadora.sum(num1, num2));
                         break;
                     case 2:
                         System.out.print("Enter first number: ");
                         num1 = scanner.nextDouble();
                         System.out.print("Enter second number: ");
                         num2 = scanner.nextDouble();
-                        System.out.println("Result: " + calculadora.subtraction(num1, num2));
+                        calculadora.save(calculadora.subtraction(num1, num2));
+                        System.out.printf("Result: %.2f\n", calculadora.subtraction(num1, num2));
                         break;
                     case 3:
                         System.out.print("Enter first number: ");
                         num1 = scanner.nextDouble();
                         System.out.print("Enter second number: ");
                         num2 = scanner.nextDouble();
-                        System.out.println("Result: " + calculadora.calculateProduct(num1, num2));
+                        calculadora.save(calculadora.calculateProduct(num1, num2));
+                        System.out.printf("Result: %.2f\n", calculadora.calculateProduct(num1, num2));
                         break;
                     case 4:
                         System.out.print("Enter first number: ");
@@ -55,7 +57,8 @@ import java.util.Scanner;
                         System.out.print("Enter second number: ");
                         num2 = scanner.nextDouble();
                         try {
-                            System.out.println("Result: " + calculadora.division(num1, num2));
+                            calculadora.save(calculadora.division(num1, num2));
+                            System.out.printf("Result: %.2f\n", calculadora.division(num1, num2));
                         } catch (IllegalArgumentException e) {
                             System.out.println(e.getMessage());
                         }
@@ -65,13 +68,15 @@ import java.util.Scanner;
                         num1 = scanner.nextDouble();
                         System.out.print("Enter exponent: ");
                         num2 = scanner.nextDouble();
-                        System.out.println("Result: " + calculadora.power(num1, num2));
+                        calculadora.save(calculadora.power(num1, num2));
+                        System.out.printf("Result: %.2f\n", calculadora.power(num1, num2));
                         break;
                     case 6:
                         System.out.print("Enter number: ");
                         int number = scanner.nextInt();
                         try {
-                            System.out.println("Result: " + calculadora.calculateFactorial(number));
+                            calculadora.save(calculadora.calculateFactorial(number));
+                            System.out.printf("Result: %.2f\n", calculadora.calculateFactorial(number));
                         } catch (IllegalArgumentException e) {
                             System.out.println(e.getMessage());
                         }
@@ -79,13 +84,13 @@ import java.util.Scanner;
                     case 7:
                         System.out.print("Enter number: ");
                         number = scanner.nextInt();
-                        System.out.println("Result: " + calculadora.isComposedByCubes(number));
+                        System.out.printf("Result: %.2f\n", (calculadora.isComposedByCubes(number) ? "É igual à soma do cubo dos seus algarismos" : "Não é igual à soma do cubo dos seus algarismos"));
                         break;
                     case 8:
                         System.out.print("Enter binary string: ");
                         String binaryString = scanner.next();
                         try {
-                            System.out.println("Result: " + calculadora.binaryToDecimal(binaryString));
+                            System.out.printf("Result: %.2f\n", calculadora.binaryToDecimal(binaryString));
                         } catch (IllegalArgumentException e) {
                             System.out.println(e.getMessage());
                         }
@@ -93,29 +98,23 @@ import java.util.Scanner;
                     case 9:
                         System.out.print("Enter decimal number: ");
                         number = scanner.nextInt();
-                        System.out.println("Result: " + calculadora.decimalToBinary(number));
+                        System.out.printf("Result: %.2f\n", calculadora.decimalToBinary(number));
                         break;
                     case 10:
                         System.out.print("Enter integer number: ");
                         num1 = scanner.nextDouble();
-                        System.out.println("Result: " + calculadora.intToHex(num1));
+                        System.out.printf("Result: %.2f\n", calculadora.intToHex(num1));
                         break;
                     case 11:
                         System.out.print("Enter number: ");
                         number = scanner.nextInt();
-                        System.out.println("Result: " + calculadora.isPrime(number));
+                        System.out.println("Result: " + (calculadora.isPrime(number) ? "É primo" : "Não é primo"));
                         break;
                     case 12:
-                        System.out.print("Enter result to save: ");
-                        double result = scanner.nextDouble();
-                        calculadora.save(result);
-                        System.out.println("Result saved.");
-                        break;
-                    case 13:
                         calculadora.erase();
                         System.out.println("Result erased.");
                         break;
-                    case 14:
+                    case 13:
                         exit = true;
                         break;
                     default:
