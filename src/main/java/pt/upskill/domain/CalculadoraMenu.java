@@ -24,7 +24,7 @@ import java.util.Scanner;
                 System.out.println("12. Save Result");
                 System.out.println("13. Erase Result");
                 System.out.println("14. Exit");
-                System.out.print("Choose an option: ");
+                System.out.print("\nChoose an option: ");
                 int choice = scanner.nextInt();
 
                 switch (choice) {
@@ -121,6 +121,7 @@ import java.util.Scanner;
                     default:
                         System.out.println("Invalid option. Please try again.");
                 }
+                System.out.println();
             }
 
             scanner.close();
