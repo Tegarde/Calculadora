@@ -70,6 +70,11 @@ class CalculadoraTest {
     }
 
     @Test
+    void divisionWithStoreResultByZero_ShouldThrowException() {
+        assertThrows(IllegalArgumentException.class, () -> calc.division(0));
+    }
+
+    @Test
     void divisionWithStoreResult() {
         calc.save(10);
         double result = calc.division(3);
