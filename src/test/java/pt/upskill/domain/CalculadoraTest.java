@@ -1,6 +1,8 @@
 package pt.upskill.domain;
 
 import org.junit.jupiter.api.Test;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -269,5 +271,116 @@ class CalculadoraTest {
     void testIntToHexWithZero() {
         String result = calc.intToHex(0);
         assertEquals("0", result);
+    }
+}
+
+class CalculadoraMenuTest {
+
+    @Test
+    void testMenuOption1() {
+        String input = "1\n5\n3\n13\n";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        CalculadoraMenu.main(new String[]{});
+    }
+
+    @Test
+    void testMenuOption2() {
+        String input = "2\n5\n3\n13\n";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        CalculadoraMenu.main(new String[]{});
+    }
+
+    @Test
+    void testMenuOption3() {
+        String input = "3\n5\n3\n13\n";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        CalculadoraMenu.main(new String[]{});
+    }
+
+    @Test
+    void testMenuOption4() {
+        String input = "4\n10\n2\n13\n";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        CalculadoraMenu.main(new String[]{});
+    }
+
+    @Test
+    void testMenuOption5() {
+        String input = "5\n2\n3\n13\n";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        CalculadoraMenu.main(new String[]{});
+    }
+
+    @Test
+    void testMenuOption6() {
+        String input = "6\n5\n13\n";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        CalculadoraMenu.main(new String[]{});
+    }
+
+    /*
+    @Test
+    void testMenuOption7() {
+        String input = "7\n153\n13\n";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        CalculadoraMenu.main(new String[]{});
+    }
+     */
+
+    @Test
+    void testMenuOption8() {
+        String input = "8\n1010\n13\n";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        CalculadoraMenu.main(new String[]{});
+    }
+
+    /*
+    @Test
+    void testMenuOption9() {
+        String input = "9\n10\n13\n";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        CalculadoraMenu.main(new String[]{});
+    }
+
+    @Test
+    void testMenuOption10() {
+        String input = "10\n255\n13\n";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        CalculadoraMenu.main(new String[]{});
+    }
+    */
+
+    @Test
+    void testMenuOption11() {
+        String input = "11\n7\n13\n";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        CalculadoraMenu.main(new String[]{});
+    }
+
+    @Test
+    void testMenuOption12() {
+        String input = "12\n13\n";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        CalculadoraMenu.main(new String[]{});
+    }
+
+    @Test
+    void testInvalidOption() {
+        String input = "14\n13\n";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        CalculadoraMenu.main(new String[]{});
     }
 }
