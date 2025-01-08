@@ -1,5 +1,7 @@
+
 package pt.upskill.domain;
 
+import java.util.Objects;
 import java.util.Scanner;
 
     public class CalculadoraMenu {
@@ -20,6 +22,7 @@ import java.util.Scanner;
                         double num2 = scanner.nextDouble();
                         calculadora.save(calculadora.sum(num1, num2));
                         System.out.printf("Result: %.2f\n", calculadora.getResult());
+                        subMenu(calculadora);
                         break;
                     case 2:
                         System.out.print("Enter first number: ");
@@ -28,6 +31,7 @@ import java.util.Scanner;
                         num2 = scanner.nextDouble();
                         calculadora.save(calculadora.subtraction(num1, num2));
                         System.out.printf("Result: %.2f\n", calculadora.getResult());
+                        subMenu(calculadora);
                         break;
                     case 3:
                         System.out.print("Enter first number: ");
@@ -36,6 +40,7 @@ import java.util.Scanner;
                         num2 = scanner.nextDouble();
                         calculadora.save(calculadora.calculateProduct(num1, num2));
                         System.out.printf("Result: %.2f\n", calculadora.getResult());
+                        subMenu(calculadora);
                         break;
                     case 4:
                         System.out.print("Enter first number: ");
@@ -48,6 +53,7 @@ import java.util.Scanner;
                         } catch (IllegalArgumentException e) {
                             System.out.println(e.getMessage());
                         }
+                        subMenu(calculadora);
                         break;
                     case 5:
                         System.out.print("Enter base number: ");
@@ -56,6 +62,7 @@ import java.util.Scanner;
                         num2 = scanner.nextDouble();
                         calculadora.save(calculadora.power(num1, num2));
                         System.out.printf("Result: %.2f\n", calculadora.getResult());
+                        subMenu(calculadora);
                         break;
                     case 6:
                         System.out.print("Enter number: ");
