@@ -22,7 +22,7 @@ import java.util.Scanner;
                         double num2 = scanner.nextDouble();
                         calculadora.save(calculadora.sum(num1, num2));
                         System.out.printf("Result: %.2f\n", calculadora.getResult());
-                        subMenu(calculadora);
+                        question(calculadora);
                         break;
                     case 2:
                         System.out.print("Enter first number: ");
@@ -31,7 +31,7 @@ import java.util.Scanner;
                         num2 = scanner.nextDouble();
                         calculadora.save(calculadora.subtraction(num1, num2));
                         System.out.printf("Result: %.2f\n", calculadora.getResult());
-                        subMenu(calculadora);
+                        question(calculadora);
                         break;
                     case 3:
                         System.out.print("Enter first number: ");
@@ -40,7 +40,7 @@ import java.util.Scanner;
                         num2 = scanner.nextDouble();
                         calculadora.save(calculadora.calculateProduct(num1, num2));
                         System.out.printf("Result: %.2f\n", calculadora.getResult());
-                        subMenu(calculadora);
+                        question(calculadora);
                         break;
                     case 4:
                         System.out.print("Enter first number: ");
@@ -53,7 +53,7 @@ import java.util.Scanner;
                         } catch (IllegalArgumentException e) {
                             System.out.println(e.getMessage());
                         }
-                        subMenu(calculadora);
+                        question(calculadora);
                         break;
                     case 5:
                         System.out.print("Enter base number: ");
@@ -62,7 +62,7 @@ import java.util.Scanner;
                         num2 = scanner.nextDouble();
                         calculadora.save(calculadora.power(num1, num2));
                         System.out.printf("Result: %.2f\n", calculadora.getResult());
-                        subMenu(calculadora);
+                        question(calculadora);
                         break;
                     case 6:
                         System.out.print("Enter number: ");
@@ -181,6 +181,24 @@ import java.util.Scanner;
                     calculadora.erase();
                     System.out.println("Result erased.");
                     break;
+            }
+        }
+
+        public static void question(Calculadora calculadora) {
+            Scanner scanner = new Scanner(System.in);
+            boolean keepGoing = true; // Loop continuará enquanto o usuário desejar.
+
+            while (keepGoing) {
+                System.out.println("Do you want to save the result? (Y/N): ");
+                String answer = scanner.nextLine().toUpperCase();
+
+                if (answer.startsWith("N")) {
+                    keepGoing = false; // Sai do loop.
+                } else if (answer.startsWith("Y")) {
+                    subMenu(calculadora); // Chama o submenu para continuar com o resultado.
+                } else {
+                    System.out.println("Invalid input. Please enter 'Y' or 'N'.");
+                }
             }
         }
     }
