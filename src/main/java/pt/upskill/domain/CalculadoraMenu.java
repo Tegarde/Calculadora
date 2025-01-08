@@ -120,6 +120,7 @@ import java.util.Scanner;
                     default:
                         System.out.println("Invalid option. Please try again.");
                 }
+                System.out.println();
             }
 
             scanner.close();
