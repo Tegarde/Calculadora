@@ -107,6 +107,7 @@ import java.util.Scanner;
                         System.out.println("Invalid option. Please try again.");
                 }
                 System.out.println();
+
             }
 
             scanner.close();
@@ -144,6 +145,12 @@ import java.util.Scanner;
                     System.out.println("Enter number: ");
                     double num1 = scanner.nextDouble();
                     calculadora.save(calculadora.sum(num1));
+                    System.out.printf("Result: %.2f\n", calculadora.getResult());
+                    break;
+                case 2:
+                    System.out.println("Enter number: ");
+                    double num2 = scanner.nextDouble();
+                    calculadora.save(calculadora.subtraction(num2));
                     System.out.printf("Result: %.2f\n", calculadora.getResult());
                     break;
             }
