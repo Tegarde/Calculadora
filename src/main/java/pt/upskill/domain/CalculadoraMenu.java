@@ -9,7 +9,7 @@ import java.util.Scanner;
             boolean exit = false;
 
             while (!exit) {
-                menu(scanner);
+                menu();
                 int choice = scanner.nextInt();
 
                 switch (choice) {
@@ -111,6 +111,24 @@ import java.util.Scanner;
 
             scanner.close();
         }
+        public static void menu() {
+            System.out.println("Menu:");
+            System.out.println("1. Sum");
+            System.out.println("2. Subtraction");
+            System.out.println("3. Product");
+            System.out.println("4. Division");
+            System.out.println("5. Power");
+            System.out.println("6. Calculate Factorial");
+            System.out.println("7. Check if Number is Composed by Cubes");
+            System.out.println("8. Convert Binary to Decimal");
+            System.out.println("9. Convert Decimal to Binary");
+            System.out.println("10. Convert Integer to Hex");
+            System.out.println("11. Check if Number is Prime");
+            System.out.println("12. Erase Result");
+            System.out.println("13. Exit");
+            System.out.print("Choose an option: ");
+        }
+
         public static void subMenu(Calculadora calculadora) {
             System.out.println("1. Sum");
             System.out.println("2. Subtraction");
