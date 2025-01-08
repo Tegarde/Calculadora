@@ -33,7 +33,7 @@ import java.util.Scanner;
                         System.out.print("Enter second number: ");
                         double num2 = scanner.nextDouble();
                         calculadora.save(calculadora.sum(num1, num2));
-                        System.out.printf("Result: %.2f\n", calculadora.sum(num1, num2));
+                        System.out.printf("Result: %.2f\n", calculadora.getResult());
                         break;
                     case 2:
                         System.out.print("Enter first number: ");
@@ -41,7 +41,7 @@ import java.util.Scanner;
                         System.out.print("Enter second number: ");
                         num2 = scanner.nextDouble();
                         calculadora.save(calculadora.subtraction(num1, num2));
-                        System.out.printf("Result: %.2f\n", calculadora.subtraction(num1, num2));
+                        System.out.printf("Result: %.2f\n", calculadora.getResult());
                         break;
                     case 3:
                         System.out.print("Enter first number: ");
@@ -49,7 +49,7 @@ import java.util.Scanner;
                         System.out.print("Enter second number: ");
                         num2 = scanner.nextDouble();
                         calculadora.save(calculadora.calculateProduct(num1, num2));
-                        System.out.printf("Result: %.2f\n", calculadora.calculateProduct(num1, num2));
+                        System.out.printf("Result: %.2f\n", calculadora.getResult());
                         break;
                     case 4:
                         System.out.print("Enter first number: ");
@@ -58,7 +58,7 @@ import java.util.Scanner;
                         num2 = scanner.nextDouble();
                         try {
                             calculadora.save(calculadora.division(num1, num2));
-                            System.out.printf("Result: %.2f\n", calculadora.division(num1, num2));
+                            System.out.printf("Result: %.2f\n", calculadora.getResult());
                         } catch (IllegalArgumentException e) {
                             System.out.println(e.getMessage());
                         }
@@ -69,14 +69,14 @@ import java.util.Scanner;
                         System.out.print("Enter exponent: ");
                         num2 = scanner.nextDouble();
                         calculadora.save(calculadora.power(num1, num2));
-                        System.out.printf("Result: %.2f\n", calculadora.power(num1, num2));
+                        System.out.printf("Result: %.2f\n", calculadora.getResult());
                         break;
                     case 6:
                         System.out.print("Enter number: ");
                         int number = scanner.nextInt();
                         try {
                             calculadora.save(calculadora.calculateFactorial(number));
-                            System.out.printf("Result: %.2f\n", calculadora.calculateFactorial(number));
+                            System.out.printf("Result: %.2f\n", calculadora.getResult());
                         } catch (IllegalArgumentException e) {
                             System.out.println(e.getMessage());
                         }
@@ -124,6 +124,25 @@ import java.util.Scanner;
             }
 
             scanner.close();
+        }
+        public static void subMenu(Calculadora calculadora) {
+            System.out.println("1. Sum");
+            System.out.println("2. Subtraction");
+            System.out.println("3. Product");
+            System.out.println("4. Division");
+            System.out.println("5. Power");
+            System.out.println("6. Erase Result and Exit");
+            System.out.print("\nChoose an option: ");
+            Scanner scanner = new Scanner(System.in);
+            int choice = scanner.nextInt();
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter number: ");
+                    double num1 = scanner.nextDouble();
+                    calculadora.save(calculadora.sum(num1));
+                    System.out.printf("Result: %.2f\n", calculadora.getResult());
+                    break;
+            }
         }
     }
 

@@ -45,6 +45,10 @@ public class Calculadora {
         return result / num1;
     }
 
+    public double getResult() {
+        return result;
+    }
+
     public void save(double result) {
         this.result = result;
     }
